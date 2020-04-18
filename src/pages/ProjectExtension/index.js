@@ -12,7 +12,7 @@ export default function ProjectExtension() {
 
   useEffect(() => {
     async function loadProjects() {
-      const response = await api.get('/projects');
+      const response = await api.get('/projects-type/Projeto-de-Extensao');
 
       const data = response.data.map(project => ({
         id: project.id,
@@ -36,7 +36,9 @@ export default function ProjectExtension() {
               <span>Title: {data.title}</span>
               <span>Orientadores: {data.teachers}</span>
               <span>Autores: {data.students}</span>
-              <Link to={`/project-By-Id/${data.id}`}>Mais Detalhes</Link>
+              <Link to={`/project-By-Id/${data.id}`} target="_blank">
+                Mais Detalhes
+              </Link>
             </li>
           ))}
         </Projects>

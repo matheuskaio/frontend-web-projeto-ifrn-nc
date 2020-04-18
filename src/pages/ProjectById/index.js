@@ -8,15 +8,16 @@ import { Container, Title, Topicos } from './styles';
 
 export default function ProjectById() {
   const [project, setProject] = useState({});
+
   const { id } = useParams();
+
   useEffect(() => {
     async function loadProject() {
       const response = await api.get(`/projects/${id}`);
       setProject(response.data);
     }
     loadProject();
-  }, []);
-
+  }, [id]);
   return (
     <>
       <Header />
@@ -61,6 +62,7 @@ export default function ProjectById() {
           data-width=""
         />
       </Container>
+
       <Footer />
     </>
   );
