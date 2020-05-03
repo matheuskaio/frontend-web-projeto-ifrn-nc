@@ -26,7 +26,7 @@ export default function Header() {
           <Link to="/sobre">Sobre</Link>
         </li>
       </ul>
-      <button>Login</button>
+      <button to="/">Login</button>
     </Container>
   );
 }

@@ -7,7 +7,11 @@ import ProjectExtension from '../pages/ProjectExtension';
 import ProjectSearch from '../pages/ProjectSearch';
 import Tcc from '../pages/Tcc';
 import ProjectById from '../pages/ProjectById';
-import Login from '../pages/Login';
+import SignIn from '../pages/SignIn';
+
+// PÁGINAS PRIVADAS
+
+import Dashboard from '../pages/Dashboard';
 
 export default function Routes() {
   return (
@@ -17,9 +21,13 @@ export default function Routes() {
         <Route path="/project-extension" component={ProjectExtension} />
         <Route path="/project-search" component={ProjectSearch} />
         <Route path="/tcc" component={Tcc} />
-        <Route path="/login" component={Login} />
+        <Route path="/signIn" component={SignIn} />
 
         <Route path="/project-By-Id/:id" component={ProjectById} />
+
+        {/* ROTAS PRIVADAS */}
+
+        <Route path="/dashboard" component={Dashboard} />
       </Switch>
     </BrowserRouter>
   );
