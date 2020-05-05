@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Switch, BrowserRouter } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import Route from './Route';
 import Home from '../pages/Home';
 import ProjectExtension from '../pages/ProjectExtension';
@@ -16,21 +16,19 @@ import AddProject from '../pages/Admin/AddProject';
 
 export default function Routes() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/project-extension" component={ProjectExtension} />
-        <Route path="/project-search" component={ProjectSearch} />
-        <Route path="/tcc" component={Tcc} />
-        <Route path="/signIn" component={SignIn} />
+    <Switch>
+      <Route path="/" exact component={Home} />
+      <Route path="/project-extension" component={ProjectExtension} />
+      <Route path="/project-search" component={ProjectSearch} />
+      <Route path="/tcc" component={Tcc} />
+      <Route path="/signIn" component={SignIn} />
 
-        <Route path="/project-By-Id/:id" component={ProjectById} />
+      <Route path="/project-By-Id/:id" component={ProjectById} />
 
-        {/* ROTAS PRIVADAS */}
+      {/* ROTAS PRIVADAS */}
 
-        <Route path="/dashboard" component={Dashboard} isPrivate />
-        <Route path="/add-projects" component={AddProject} isPrivate />
-      </Switch>
-    </BrowserRouter>
+      <Route path="/dashboard" component={Dashboard} isPrivate />
+      <Route path="/add-projects" component={AddProject} isPrivate />
+    </Switch>
   );
 }

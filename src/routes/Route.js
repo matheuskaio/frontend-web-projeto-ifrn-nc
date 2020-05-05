@@ -4,13 +4,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
 
+import store from '../store';
 // Desestrutura as propriedades que o component recebe
 export default function RoutesWrapper({
   component: Component,
   isPrivate,
   ...rest
 }) {
-  const signed = true;
+  const { signed } = store.getState().auth;
 
   if (!signed && isPrivate) {
     // Caso tente acessar uma página privada, ele é redirecionado para essa página
