@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
-
+import { Switch, BrowserRouter } from 'react-router-dom';
+import Route from './Route';
 import Home from '../pages/Home';
 import ProjectExtension from '../pages/ProjectExtension';
 import ProjectSearch from '../pages/ProjectSearch';
@@ -11,7 +11,8 @@ import SignIn from '../pages/SignIn';
 
 // PÁGINAS PRIVADAS
 
-import Dashboard from '../pages/Dashboard';
+import Dashboard from '../pages/Admin/Dashboard';
+import AddProject from '../pages/Admin/AddProject';
 
 export default function Routes() {
   return (
@@ -27,7 +28,8 @@ export default function Routes() {
 
         {/* ROTAS PRIVADAS */}
 
-        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/dashboard" component={Dashboard} isPrivate />
+        <Route path="/add-projects" component={AddProject} isPrivate />
       </Switch>
     </BrowserRouter>
   );

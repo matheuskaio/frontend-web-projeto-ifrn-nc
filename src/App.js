@@ -1,15 +1,19 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import GlobalStyle from './styles/global';
-
 import './config/ReactotronConfig';
 
 import Routes from './routes';
 
+import store from './store';
+
 function App() {
   return (
     <>
-      <Routes />
-      <GlobalStyle />
+      <Provider store={store}>
+        <Routes />
+        <GlobalStyle />
+      </Provider>
     </>
   );
 }
